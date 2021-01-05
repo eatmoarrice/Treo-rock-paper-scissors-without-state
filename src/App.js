@@ -23,33 +23,37 @@ function App() {
 			playerResult = 'tie';
 		} else if (computerChoice === 'rock') {
 			if (playerChoice === 'paper') {
-				computerResult = 'lose';
+				computerResult = 'loss';
 				playerResult = 'win';
 			} else {
 				computerResult = 'win';
-				playerResult = 'lose';
+				playerResult = 'loss';
 			}
 		} else if (computerChoice === 'paper') {
 			if (playerChoice === 'scissors') {
-				computerResult = 'lose';
+				computerResult = 'loss';
 				playerResult = 'win';
 			} else {
 				computerResult = 'win';
-				playerResult = 'lose';
+				playerResult = 'loss';
 			}
 		} else {
 			if (playerChoice === 'rock') {
-				computerResult = 'lose';
+				computerResult = 'loss';
 				playerResult = 'win';
 			} else {
 				computerResult = 'win';
-				playerResult = 'lose';
+				playerResult = 'loss';
 			}
 		}
 	};
 
-	randomMove();
-	calculateWinner();
+	const play = () => {
+		randomMove();
+		calculateWinner();
+	};
+
+	play();
 
 	return (
 		<div className="App text-center">
@@ -59,13 +63,7 @@ function App() {
 					<ChoiceCard title="You" result={playerResult} shape={playerChoice} />
 					<ChoiceCard title="Computer" result={computerResult} shape={computerChoice} />
 				</div>
-				<Button
-					variant="info"
-					onClick={() => {
-						randomMove();
-						calculateWinner();
-					}}
-				>
+				<Button variant="info" onClick={play}>
 					Random
 				</Button>
 			</Container>

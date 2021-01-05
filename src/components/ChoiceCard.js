@@ -8,7 +8,7 @@ const ChoiceCard = (props) => {
 		<div className={`choice-card ${props.result === 'win' ? 'border-success' : props.result === 'tie' ? 'border-dark' : 'border-danger'}`}>
 			<h2>{props.title}</h2>
 			<img src={props.shape === 'rock' ? rock : props.shape === 'paper' ? paper : scissors} alt={props.shape} />
-			<h3>{props.result === 'win' ? 'WIN' : props.result === 'tie' ? 'TIE' : 'LOSE'}</h3>
+			<h3>{props.result === 'win' ? 'WIN' : props.result === 'tie' ? 'TIE' : 'LOSS'}</h3>
 		</div>
 	);
 };
