@@ -11,7 +11,6 @@ function App() {
 	let computerResult = 'tie';
 	let playerResult = 'tie';
 	const randomMove = () => {
-		console.log(computerChoice);
 		computerChoice = shapes[Math.floor(Math.random() * 3)];
 		playerChoice = shapes[Math.floor(Math.random() * 3)];
 		console.log('Computer: ', computerChoice);
